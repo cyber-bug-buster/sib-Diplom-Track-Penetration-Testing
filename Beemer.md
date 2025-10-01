@@ -7,8 +7,8 @@
 **Предложения по исправлению**:
 - Использовать санитизацию и экранирование пользовательского ввода
 
-<details>
-<summary>Подробности реализации</summary>
+
+Подробности реализации
 
 - Заходим на исследуемую страницу и вводим в поле ввода следующую команду `127.0.0.1 & cat /etc/passwd`, которая объединяет результаты команды `ping` и `cat`. После выполнения команды на сервере будет отображено содержимое файла `/etc/passwd`
 ![command_injection.png](pic/owasp/command_injection.png)
@@ -30,15 +30,15 @@
 **Предложения по исправлению**:
 - Валидация значений параметров запросов
 
-<details>
-<summary>Подробности реализации</summary>
+
+Подробности реализации
 
 1. Перейти на страницу `http://92.51.39.106:7788/read?file=../../../../../../etc/passwd`, в ответ сервер отобразит содержимое файла `/etc/passwd`
    ![path_traversal.png](pic/owasp/path_traversal.png)
 2. Перейти на страницу `http://92.51.39.106:7788/static/..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2Fetc%2Fpasswd`, в ответ сервер отобразит содержимое файла `/etc/passwd`
 ![path_traversal1.png](pic/owasp/path_traversal1.png)
 
-#### 3.  Уя звимость    [Unrestricted File Upload](https://owasp.org/www-community/vulnerabilities/Unrestricted_File_Upload). ([A03:2021-Injection](https://owasp.org/Top10/A03_2021-Injection/))**
+#### 3.  Уязвимость    [Unrestricted File Upload](https://owasp.org/www-community/vulnerabilities/Unrestricted_File_Upload). ([A03:2021-Injection](https://owasp.org/Top10/A03_2021-Injection/))**
 **Критичность:** <font color="red">**Высокая**</font>  
 **Страница**: `http://92.51.39.106:7788/index.html`    
 **Описание**:Уязвимость позволяет загрузить произвольный файл, отличный от картинки
