@@ -139,5 +139,7 @@ page=php://filter/read=convert.base64-encode/resource=../users/check_pass
 
 1. Перейти на страницу `http://92.51.39.106:8050/admin/index.php?page=login` и форме авторизации пользователя ввести логин/пароль:
    `admin/admin`
+
+   
 ![auth.png](pic/owasp/auth.png)
 ![auths.png](pic/owasp/auths.png)   
